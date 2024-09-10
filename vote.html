@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vote</title>
+</head>
+<body>
+    <h1>Vote for your Candidate</h1>
+    <form method="post">
+        {% for candidate in candidates %}
+            <input type="radio" id="{{ candidate }}" name="candidate" value="{{ candidate }}">
+            <label for="{{ candidate }}">{{ candidate }}</label><br>
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>
